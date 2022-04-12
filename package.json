@@ -1,9 +1,14 @@
 {
   "name": "express-starter-2022",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Node Express Starter for 2022",
+  "main": "src/index.js",
   "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "build": "",
+    "test": "NODE_ENV=test jest"
+  },
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=6.0.0"
@@ -25,17 +30,12 @@
         "^.+\\.(js|jsx)$": "babel-jest"
     }
   },
-  "scripts": {
-    "start": "node src/index.js",
-    "build": "",
-    "test": "NODE_ENV=test jest"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redcartel/node-express-starter-2022.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Carter Adams",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/redcartel/node-express-starter-2022/issues"
   },
