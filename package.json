@@ -51,7 +51,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "helmet": "^5.0.2"
+    "helmet": "^5.0.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "jest": "^27.5.1",
