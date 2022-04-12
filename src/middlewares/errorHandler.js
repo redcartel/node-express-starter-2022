@@ -12,7 +12,12 @@ const errorHandler = (err, req, res, next) => {
     }
     // handle generic error
     else {
-        console.error(err);
+        if (process.env['NODE_ENV'] === 'production') {
+            console.error(`${err}`.slice(0,512));
+        }
+        else {
+            console.error(err);
+        }
         return res.status(500).json({message: ''});
     }
   }
