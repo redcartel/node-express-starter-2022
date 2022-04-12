@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engine": {
+    "npm": "14.x"
+  },
   "scripts": {
     "start": "node src/index.js",
     "build": ""
