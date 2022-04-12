@@ -16,7 +16,8 @@ app.use(morgan('tiny'));
 app.use('/', root);
 
 // KEEP THESE AFTER THE ROUTES
-app.use(errorHandler);
 app.use(fourOhFour);
+app.use(errorHandler);
+
 
 export default app;

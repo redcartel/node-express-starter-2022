@@ -10,7 +10,7 @@ const getRoot = (req, res) => {
         res.status(200).send();
     }
     else {
-        res.json({ 'NODE_ENV': config.nodeEnv ?? 'undefined' });
+        res.json({ 'environment': config.nodeEnv ?? 'undefined' });
     }
 }
 
