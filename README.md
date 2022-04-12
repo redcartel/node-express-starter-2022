@@ -10,7 +10,7 @@ response if the environment is production
 
 A `POST` request to `/` will echo any json sent in the request body
 
-`throw {status: 401, message: 'forbidden'}` or `throw 401` resolve to the specified status.
+`throw {status: 401, message: 'unauthorized'}` or `throw 401` resolve to the specified status.
 
 `npm run dev` - run the development server
 
