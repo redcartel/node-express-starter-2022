@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
+    "dev": "nodemon -w .env -w src src/index.js",
     "build": "",
     "test": "NODE_ENV=test jest"
   },
@@ -24,10 +25,15 @@
   },
   "jest": {
     "verbose": true,
-    "moduleFileExtensions": ["js"],
-    "moduleDirectories": ["node_modules", "__tests__"],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "__tests__"
+    ],
     "transform": {
-        "^.+\\.(js|jsx)$": "babel-jest"
+      "^.+\\.(js|jsx)$": "babel-jest"
     }
   },
   "repository": {
@@ -49,6 +55,7 @@
     "supertest": "^6.2.2"
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15"
   }
 }
