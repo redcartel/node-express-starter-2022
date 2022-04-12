@@ -1,5 +1,5 @@
 /**
- * echo endpoint
+ * Echo endpoint
  * @param {Express.Request} req 
  * @param {Express.Response} res 
  */
