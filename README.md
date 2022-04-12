@@ -8,4 +8,6 @@
 
 `npm start` - run the server
 
-use node >= 14
+uses node >= 14
+
+uses es6 modules
