@@ -1,3 +1,5 @@
+import config from "../config.js";
+
 /**
  * Emit correct errors for throw { status, message } or throw statusCode
  * log error and emit status 500 for other errors
@@ -21,7 +23,7 @@ const errorHandler = (err, req, res, next) => {
     }
     // handle generic error
     else {
-        if (process.env['NODE_ENV'] === 'production') {
+        if (config.nodeEnv === 'production') {
             console.error(`${err}`.slice(0,512));
         }
         else {

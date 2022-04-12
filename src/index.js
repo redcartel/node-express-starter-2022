@@ -1,9 +1,9 @@
 import dotenv from 'dotenv';
 dotenv.config();
+import config from './config.js';
 import app from './app.js';
 
-const port = parseInt(process.env['PORT']) ?? 3000;
-app.listen(port, ()=>{
+app.listen(config.port, ()=>{
     console.log(`🚀`)
-    console.log(`listening on ${port} with NODE_ENV=${process.env['NODE_ENV']}`);
+    console.log(`listening on ${config.port} with NODE_ENV=${config.nodeEnv}`);
 })
