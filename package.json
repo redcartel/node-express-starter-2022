@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "engine": {
-    "npm": "14.x"
+  "engines": {
+    "node": ">=14.0.0"
   },
   "scripts": {
     "start": "node src/index.js",
