@@ -1,5 +1,14 @@
+/**
+ * Emit correct errors for throw { status, message } or throw statusCode
+ * log error and emit status 500 for other errors
+ * 
+ * @param {any} err 
+ * @param {Express.Request} req 
+ * @param {Express.Response} res 
+ * @param {Express.NextFunction} next 
+ * @returns 
+ */
 const errorHandler = (err, req, res, next) => {
-    
     // handle error of form (throw { status, message })
     if (err.hasOwnProperty('status')) {
       return res.status(err.status).json({

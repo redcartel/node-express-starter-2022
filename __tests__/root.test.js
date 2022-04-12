@@ -2,8 +2,22 @@ import { expect } from '@jest/globals';
 import supertest from 'supertest';
 import app from '../src/app.js';
 
-test('root returns environment', async ()=>{
+test('get root returns environment', async () => {
     const result = await supertest(app).get('/');
     expect(result.statusCode).toEqual(200);
     expect(result.body.NODE_ENV).toEqual('test');
+})
+
+test('post root echoes json', async () => {
+    const result = await supertest(app).post('/').send(
+        {
+            'test': 'value',
+            'nested': {
+                'test': 'value'
+            }
+        });
+    expect(result.statusCode).toEqual(200);
+    expect(result.body).toBeTruthy();
+    expect(result.body.test).toBe('value');
+    expect(result.body.nested.test).toBe('value');
 })
