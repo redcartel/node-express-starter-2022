@@ -1,10 +1,8 @@
-import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
+import app from './app.js';
 
-const app = express();
 
-app.get('/', (req, res)=>{
-    res.json({'message': 'hello'});
-})
 
 app.listen(process.env['PORT'] ?? 3000, ()=>{
     console.log('listening on 3000');
