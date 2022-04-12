@@ -4,6 +4,8 @@
   "description": "Node Express Starter for 2022",
   "main": "src/index.js",
   "type": "module",
+  "author": "Carter Adams",
+  "license": "MIT",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon -w .env -w src src/index.js",
@@ -14,6 +16,14 @@
     "node": ">=14.0.0",
     "npm": ">=6.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redcartel/node-express-starter-2022.git"
+  },
+  "bugs": {
+    "url": "https://github.com/redcartel/node-express-starter-2022/issues"
+  },
+  "homepage": "https://github.com/redcartel/node-express-starter-2022#readme",
   "babel": {
     "env": {
       "test": {
@@ -36,16 +46,6 @@
       "^.+\\.(js|jsx)$": "babel-jest"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/redcartel/node-express-starter-2022.git"
-  },
-  "author": "Carter Adams",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/redcartel/node-express-starter-2022/issues"
-  },
-  "homepage": "https://github.com/redcartel/node-express-starter-2022#readme",
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "cors": "^2.8.5",
