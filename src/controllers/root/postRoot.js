@@ -5,6 +5,9 @@
  */
 const postRoot = (req, res) => {
     const json = req.body;
+    if (!json) {
+        throw 400;
+    }
     res.json(json);
 }
 
