@@ -2,7 +2,7 @@
 
 *"A minimally opinionated node & express starter for 2022"*
 
-A minimal but useful node / express starter template with some default
+A minimal but useful node & express starter template with some default
 middleware and testing.
 
 It has a small set of features I consider essential and otherwise stays out of your way. It should be ready to deploy out of the box, at least for simple deployments.
@@ -23,7 +23,7 @@ then apply them to config.js
 `npm start` - Runs the server.
 ## Opinions:
 
-* ES6 modules & imports that look like import module from 'src/directory/file' rather than relative paths.
+* ES6 modules & imports that look like `import module from 'src/directory/file'` rather than relative paths.
 
 * json, cors, helmet, and morgan by default.
 
@@ -37,14 +37,13 @@ then apply them to config.js
 
 * No assumptions about your database or lack thereof.
 
-* .eslintrc.json is fairly permissive.
+* `.eslintrc.json` is fairly permissive.
 
 * No forced linting or any other babysitting.
 
 ## Default endpoints:
 
-A `GET` request to `/` will respond with the value of NODE_ENV or an empty
-response if the environment is production.
+A `GET` request to `/` will respond with the value of NODE_ENV or an empty response if the environment is production.
 
 A `POST` request to `/` will echo any json sent in the request body.
 
@@ -53,5 +52,7 @@ A `POST` request to `/` will echo any json sent in the request body.
 Has been tested on DigitalOcean's app PaaS.
 
 Docker coming soon.
+
+## Help out
 
 Feedback and contributions are very welcome.
