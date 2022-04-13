@@ -15,7 +15,7 @@ const errorHandler = (err, req, res, next) => {
         // handle error of form (throw { status, message })
         if (err.hasOwnProperty('status')) {
             return res.status(err.status).json({
-                message: err.message ?? ''
+                message: err.message ?? '';
             });
         }
         // handle numeric error (throw http code)
@@ -35,8 +35,8 @@ const errorHandler = (err, req, res, next) => {
     }
     catch (e) {
         console.error('An error happened while processing an error');
-        console.error(e)
-        console.error('')
+        console.error(e);
+        console.error('');
         console.error(err);
         return res.status(500).json({ message: '' });
     }
