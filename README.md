@@ -27,7 +27,7 @@ then apply them to config.js
 
     - json, cors, helmet, and morgan by default.
 
-    - Error handling & 404 middleware are custom and modifiable.
+    - Error handling & 404 middleware are custom and modifiable. Read the source for features.
 
     - Jest & supertest for simple tests of endpoints.
 

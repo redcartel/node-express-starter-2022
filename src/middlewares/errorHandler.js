@@ -1,8 +1,9 @@
 import config from "src/config.js"
 
 /**
- * Emit correct errors for throw { status, message } or throw statusCode
- * log error and emit status 500 for other errors
+ * Emit correct errors for `throw { status: 403, message: 'forbidden', ... }` or e.g. `throw 403`.
+ * For involuntary errors, it logs and responds with nothing in production and error
+ * information otherwise.
  *
  * @param {any} err
  * @param {Express.Request} req
@@ -12,7 +13,7 @@ import config from "src/config.js"
  */
 const errorHandler = (err, req, res, next) => {
     try {
-        // handle error of form (throw { status, message })
+        // handle error of form (throw { status, ... })
         if (err.hasOwnProperty('status')) {
             return res.status(err.status).json({
                 message: err.message ?? ''
