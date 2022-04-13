@@ -53,3 +53,5 @@ A `POST` request to `/` will echo any json sent in the request body.
 Has been tested on DigitalOcean's app PaaS.
 
 Docker coming soon.
+
+Feedback and contributions are very welcome.
