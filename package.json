@@ -1,13 +1,14 @@
 {
   "name": "express-starter-2022",
   "version": "1.0.0",
-  "description": "Unopinionated Node Express Starter for 2022",
-  "main": "src/index.js",
+  "description": "A minimally opinionated node & express starter for 2022",
+  "main": "dist/index.js",
   "author": "Carter Adams",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon -r dotenv/config -w .env -w src dist/index.js --exec babel-node",
     "test": "cross-env NODE_ENV=test jest",
+    "test:watch": "cross-env NODE_ENV=test jest --watch",
+    "dev": "nodemon -r dotenv/config -w .env -w src dist/index.js --exec babel-node",
     "build": "babel src -d dist --copy-files",
     "start": "node dist/index.js"
   },
