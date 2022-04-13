@@ -4,9 +4,11 @@
         "experimentalObjectRestSpread": true,
         "sourceType": "module"
     },
-    "rules": {
-    },
+    "extends": [
+        "eslint:recommended"
+    ],
     "env": {
-        "node": true
+        "node": true,
+        "jest": true
     }
 }

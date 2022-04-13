@@ -55,7 +55,7 @@ Docker coming soon.
 
 # Visual Studio Code
 
-For code completion to automatically create absolute path imports, you may need to create a `./vscode/settings.json` file with
+For code completion to automatically create absolute path imports, you may need to create a `./.vscode/settings.json` file with
 
 ```
 {
