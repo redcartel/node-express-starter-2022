@@ -23,23 +23,23 @@ then apply them to config.js
 `npm start` - Runs the server.
 ## Opinions:
 
-    - ES6 modules & imports that look like import module from 'src/directory/file' rather than relative paths.
+* ES6 modules & imports that look like import module from 'src/directory/file' rather than relative paths.
 
-    - json, cors, helmet, and morgan by default.
+* json, cors, helmet, and morgan by default.
 
-    - Error handling & 404 middleware are custom and modifiable. Read the source for features.
+* Error handling & 404 middleware are custom and modifiable. Read the source for features.
 
-    - Jest & supertest for simple tests of endpoints.
+* Jest & supertest for simple tests of endpoints.
 
-    - Node 14 as a minimum standard.
+* Node 14 as a minimum standard.
 
 ## Lack of opinions:
 
-    - No assumptions about your database or lack thereof.
+* No assumptions about your database or lack thereof.
 
-    - .eslintrc.json is fairly permissive.
+* .eslintrc.json is fairly permissive.
 
-    - No forced linting or any other babysitting.
+* No forced linting or any other babysitting.
 
 ## Default endpoints:
 
