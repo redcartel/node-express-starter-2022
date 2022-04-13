@@ -4,8 +4,8 @@
  * @param {Express.Response} res 
  */
 const postRoot = (req, res) => {
-    const json = req.body;
-    res.json(json);
+    const json = req.body
+    res.json(json)
 }
 
-export default postRoot;
+export default postRoot

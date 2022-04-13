@@ -5,7 +5,7 @@
  * @param {Express.NextFunction} next 
  */
 const fourOhFour = (req, res, next) => {
-    throw {status: 404, message: 'not found'};
-};
+    throw {status: 404, message: 'not found'}
+}
 
-export default fourOhFour;
+export default fourOhFour

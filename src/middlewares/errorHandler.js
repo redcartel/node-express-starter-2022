@@ -1,4 +1,4 @@
-import config from "src/config.js";
+import config from "src/config.js"
 
 /**
  * Emit correct errors for throw { status, message } or throw statusCode
@@ -16,30 +16,30 @@ const errorHandler = (err, req, res, next) => {
         if (err.hasOwnProperty('status')) {
             return res.status(err.status).json({
                 message: err.message ?? ''
-            });
+            })
         }
         // handle numeric error (throw http code)
         else if (parseInt(`${err}`) >= 200 && parseInt(`${err}`) < 600) {
-            return res.status(parseInt(`${err}`)).json({ message: `${err}` });
+            return res.status(parseInt(`${err}`)).json({ message: `${err}` })
         }
         // handle generic error
         else {
             if (config.nodeEnv === 'production') {
-                console.error(`${err}`.slice(0, 512));
+                console.error(`${err}`.slice(0, 512))
             }
             else {
-                console.error(err);
+                console.error(err)
             }
-            return res.status(500).json({ message: '' });
+            return res.status(500).json({ message: '' })
         }
     }
     catch (e) {
-        console.error('An error happened while processing an error');
-        console.error(e);
-        console.error('');
-        console.error(err);
-        return res.status(500).json({ message: '' });
+        console.error('An error happened while processing an error')
+        console.error(e)
+        console.error('')
+        console.error(err)
+        return res.status(500).json({ message: '' })
     }
 }
 
-export default errorHandler;
+export default errorHandler

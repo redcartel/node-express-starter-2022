@@ -7,11 +7,11 @@ import config from 'src/config.js'
  */
 const getRoot = (req, res) => {
     if (config.nodeEnv === 'production') {
-        res.status(200).send();
+        res.status(200).send()
     }
     else {
-        res.json({ 'environment': config.nodeEnv ?? 'undefined' });
+        res.json({ 'environment': config.nodeEnv ?? 'undefined' })
     }
 }
 
-export default getRoot;
+export default getRoot
