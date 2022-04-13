@@ -1,4 +1,4 @@
-import config from "../config.js";
+import config from "src/config.js";
 
 /**
  * Emit correct errors for throw { status, message } or throw statusCode
@@ -15,7 +15,7 @@ const errorHandler = (err, req, res, next) => {
         // handle error of form (throw { status, message })
         if (err.hasOwnProperty('status')) {
             return res.status(err.status).json({
-                message: err.message ?? '';
+                message: err.message ?? ''
             });
         }
         // handle numeric error (throw http code)

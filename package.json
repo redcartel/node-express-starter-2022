@@ -7,10 +7,10 @@
   "author": "Carter Adams",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon -w .env -w src src/index.js",
+    "start": "cross-env NODE_PATH=. node --es-module-specifier-resolution=node  src/index.js",
+    "dev": "cross-env NODE_PATH=. nodemon --es-module-specifier-resolution=node  -w .env -w src src/index.js",
     "build": "",
-    "test": "NODE_ENV=test jest"
+    "test": "cross-env NODE_PATH=. NODE_ENV=test jest"
   },
   "engines": {
     "node": ">=14.0.0",
@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "helmet": "^5.0.2",

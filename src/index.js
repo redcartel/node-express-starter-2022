@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
-import config from './config.js';
-import app from './app.js';
+import config from 'src/config';
+import app from 'src/app';
 
 app.listen(config.port, ()=>{
     console.log(`🚀`);

@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import errorHandler from './middlewares/errorHandler.js';
-import root from './routes/root.js';
-import fourOhFour from './middlewares/fourOhFour.js';
+import errorHandler from 'src/middlewares/errorHandler';
+import root from 'src/routes/root';
+import fourOhFour from 'src/middlewares/fourOhFour';
 
 const app = express();
 app.use(cors());
