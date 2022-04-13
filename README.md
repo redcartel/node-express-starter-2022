@@ -25,7 +25,7 @@ A `POST` request to `/` will echo any json sent in the request body
 Rename .env.sample to .env & Set your configuration and secrets there and
 then apply them to config.js
 
-Deployment has been tested on DigitalOcean's app platform
+Uses node >= 14, deployment has been tested on DigitalOcean's app platform
 and on Heroku's local environment.
 
-uses es6 modules
+Uses es6 modules
