@@ -12,7 +12,7 @@
 *.launch
 .settings/
 *.sublime-workspace
-.vscode/*
+.vscode
 
 # Runtime data
 pids
