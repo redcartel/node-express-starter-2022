@@ -12,24 +12,24 @@ It has a small set of features I consider essential and otherwise stays out of y
 Rename .env.sample to .env & Set your configuration and secrets there and
 then apply them to config.js
 
-`npm run dev` - run the development server
+`npm run dev` - Run the development server.
 
-`npm test` - run the tests
+`npm test` - Run tests.
 
-`npm run build` - does nothing, but required by some deployment environments
+`npm test:watch` - Run tests when files update.
 
-`npm start` - run the server
+`npm run build` - Builds the server.
+
+`npm start` - Runs the server.
 ## Opinions:
 
-    - ES6 modules & imports that look like `import module from 'src/directory/file'`
+    - ES6 modules & imports that look like `import module from 'src/directory/file'` rather than relative paths.
 
     - json, cors, helmet, and morgan by default.
 
     - Error handling & 404 middleware are custom and modifiable.
 
-    - Integration tests for endpoints.
-
-    - Not using semicolons is easier than to consistently using them.
+    - Jest & supertest for simple tests of endpoints.
 
     - Node 14 as a minimum standard.
 
@@ -37,14 +37,16 @@ then apply them to config.js
 
     - No assumptions about your database or lack thereof.
 
-    - No default linting or other babysitting.
+    - `.eslintrc.json` is fairly permissive.
+
+    - No forced linting or any other babysitting.
 
 ## Default endpoints:
 
 A `GET` request to `/` will respond with the value of NODE_ENV or an empty
-response if the environment is production
+response if the environment is production.
 
-A `POST` request to `/` will echo any json sent in the request body
+A `POST` request to `/` will echo any json sent in the request body.
 
 ## Deployment
 

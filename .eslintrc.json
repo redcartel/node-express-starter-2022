@@ -1,0 +1,12 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "experimentalObjectRestSpread": true,
+        "sourceType": "module"
+    },
+    "rules": {
+    },
+    "env": {
+        "node": true
+    }
+}

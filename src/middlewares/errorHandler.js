@@ -3,12 +3,12 @@ import config from "src/config.js"
 /**
  * Emit correct errors for throw { status, message } or throw statusCode
  * log error and emit status 500 for other errors
- * 
- * @param {any} err 
- * @param {Express.Request} req 
- * @param {Express.Response} res 
- * @param {Express.NextFunction} next 
- * @returns 
+ *
+ * @param {any} err
+ * @param {Express.Request} req
+ * @param {Express.Response} res
+ * @param {Express.NextFunction} next
+ * @returns
  */
 const errorHandler = (err, req, res, next) => {
     try {

@@ -6,7 +6,7 @@
   "author": "Carter Adams",
   "license": "MIT",
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest --verbose",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "dev": "nodemon -r dotenv/config -w .env -w src dist/index.js --exec babel-node",
     "build": "babel src -d dist --copy-files",
