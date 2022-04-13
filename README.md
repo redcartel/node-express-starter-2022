@@ -23,7 +23,7 @@ then apply them to config.js
 `npm start` - Runs the server.
 ## Opinions:
 
-    - ES6 modules & imports that look like `import module from 'src/directory/file'` rather than relative paths.
+    - ES6 modules & imports that look like import module from 'src/directory/file' rather than relative paths.
 
     - json, cors, helmet, and morgan by default.
 
@@ -37,7 +37,7 @@ then apply them to config.js
 
     - No assumptions about your database or lack thereof.
 
-    - `.eslintrc.json` is fairly permissive.
+    - .eslintrc.json is fairly permissive.
 
     - No forced linting or any other babysitting.
 
