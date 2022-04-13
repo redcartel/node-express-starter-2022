@@ -5,6 +5,8 @@
 A minimal but useful node / express starter template with testing and
 best practices middleware.
 
+It has a small set of features I consider essential and otherwise stays out of your way. It should be ready to deploy out of the box, at least for simple deployments.
+
 A `GET` request to `/` will respond with the value of NODE_ENV or an empty
 response if the environment is production
 
@@ -16,14 +18,14 @@ A `POST` request to `/` will echo any json sent in the request body
 
 `npm test` - run the tests
 
-`npm start` - run the server
-
 `npm run build` - does nothing, but required by some deployment environments
 
-Rename .env.sample to .env & Set your configuration and secrets there and
-then apply them to config.ts
+`npm start` - run the server
 
-Uses node >= 14, deployment has been tested on DigitalOcean's app platform
+Rename .env.sample to .env & Set your configuration and secrets there and
+then apply them to config.js
+
+Deployment has been tested on DigitalOcean's app platform
 and on Heroku's local environment.
 
 uses es6 modules
