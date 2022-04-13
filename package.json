@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redcartel/node-express-starter-2022.git"
+    "url": "git+https://github.com/redcartel/node-express-typescript-starter-2022.git"
   },
   "bugs": {
-    "url": "https://github.com/redcartel/node-express-starter-2022/issues"
+    "url": "https://github.com/redcartel/node-express-typescript-starter-2022/issues"
   },
-  "homepage": "https://github.com/redcartel/node-express-starter-2022#readme",
+  "homepage": "https://github.com/redcartel/node-express-typescript-starter-2022#readme",
   "babel": {
     "env": {
       "test": {
@@ -47,7 +47,6 @@
     }
   },
   "dependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
@@ -55,6 +54,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15",
     "supertest": "^6.2.2"

@@ -19,7 +19,7 @@ const errorHandler = (err, req, res, next) => {
             });
         }
         // handle numeric error (throw http code)
-        else if (parseInt(`${err}`) >= 400 && parseInt(`${err}`) < 600) {
+        else if (parseInt(`${err}`) >= 200 && parseInt(`${err}`) < 600) {
             return res.status(parseInt(`${err}`)).json({ message: `${err}` });
         }
         // handle generic error
