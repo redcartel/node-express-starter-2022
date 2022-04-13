@@ -1,6 +1,6 @@
 {
   "name": "express-starter-2022",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimally opinionated node & express starter for 2022",
   "main": "dist/index.js",
   "author": "Carter Adams",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redcartel/node-express-typescript-starter-2022.git"
+    "url": "git+https://github.com/redcartel/node-express-starter-2022.git"
   },
   "bugs": {
-    "url": "https://github.com/redcartel/node-express-typescript-starter-2022/issues"
+    "url": "https://github.com/redcartel/node-express-starter-2022/issues"
   },
-  "homepage": "https://github.com/redcartel/node-express-typescript-starter-2022#readme",
+  "homepage": "https://github.com/redcartel/node-express-starter-2022#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
