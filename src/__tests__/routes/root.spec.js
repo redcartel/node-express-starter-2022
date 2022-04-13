@@ -1,6 +1,6 @@
 import { expect } from '@jest/globals';
 import supertest from 'supertest';
-import app from '../../src/app.js';
+import app from 'src/app.js';
 
 test('get root returns environment', async () => {
     const result = await supertest(app).get('/');

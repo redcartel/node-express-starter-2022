@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "Unopinionated Node Express Starter for 2022",
   "main": "src/index.js",
-  "type": "module",
   "author": "Carter Adams",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_PATH=. node --es-module-specifier-resolution=node  src/index.js",
-    "dev": "cross-env NODE_PATH=. nodemon --es-module-specifier-resolution=node  -w .env -w src src/index.js",
-    "build": "",
-    "test": "cross-env NODE_PATH=. NODE_ENV=test jest"
+    "dev": "nodemon -w .env -w src dist/index.js --exec babel-node",
+    "test": "cross-env NODE_ENV=test jest",
+    "build": "babel src -d dist --copy-files",
+    "start": "node dist/index.js"
   },
   "engines": {
     "node": ">=14.0.0",
@@ -24,28 +23,6 @@
     "url": "https://github.com/redcartel/node-express-typescript-starter-2022/issues"
   },
   "homepage": "https://github.com/redcartel/node-express-typescript-starter-2022#readme",
-  "babel": {
-    "env": {
-      "test": {
-        "plugins": [
-          "@babel/plugin-transform-modules-commonjs"
-        ]
-      }
-    }
-  },
-  "jest": {
-    "verbose": true,
-    "moduleFileExtensions": [
-      "js"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "__tests__"
-    ],
-    "transform": {
-      "^.+\\.(js|jsx)$": "babel-jest"
-    }
-  },
   "dependencies": {
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
@@ -55,9 +32,15 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/node": "^7.16.8",
     "@babel/plugin-transform-modules-commonjs": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "babel-plugin-module-resolver": "^4.1.0",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15",
+    "regenerator-runtime": "^0.13.9",
     "supertest": "^6.2.2"
   }
 }
