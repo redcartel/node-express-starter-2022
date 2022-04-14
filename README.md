@@ -53,7 +53,7 @@ Has been tested on DigitalOcean's app PaaS.
 
 Docker coming soon.
 
-# Visual Studio Code
+## Visual Studio Code
 
 For code completion to automatically create absolute path imports, you may need to create a `./.vscode/settings.json` file with
 
