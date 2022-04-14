@@ -1,4 +1,4 @@
-# Create Express API
+# Node & Express API Template
 
 *"A minimally opinionated node & express starter for 2022"*
 
