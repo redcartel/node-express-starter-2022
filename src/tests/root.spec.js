@@ -1,4 +1,3 @@
-import { expect } from '@jest/globals'
 import supertest from 'supertest'
 import app from 'src/app'
 
