@@ -6,11 +6,14 @@ import config from 'src/config.js'
  * @param {Express.Response} res 
  */
 const getRoot = (req, res) => {
-    if (config.nodeEnv === 'production') {
-        return res.status(200).send()
+    if (config.nodeEnv !== 'production') {
+        res.status(200).json({
+            'environment': config.nodeEnv,
+            'version': config.version
+        })
     }
     else {
-        return res.json({ 'environment': config.nodeEnv ?? 'undefined' })
+        res.status(200).json({})
     }
 }
 

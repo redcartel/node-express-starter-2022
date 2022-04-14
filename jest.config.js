@@ -1,11 +1,11 @@
 module.exports = {
+    modulePathIgnorePatterns: ["<rootDir>/dist/"],
     moduleFileExtensions: [
         "js"
     ],
     moduleDirectories: [ "node_modules" ],
     transform: {
-        "^.+\\.(js|jsx)$": "babel-jest"
+        "^.+\\.js$": "babel-jest"
     },
-    modulePathIgnorePatterns: ["<rootDir>/dist/"],
     setupFilesAfterEnv: [ require.resolve('regenerator-runtime/runtime') ]
 }
