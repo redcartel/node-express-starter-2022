@@ -2,19 +2,14 @@ import config from 'src/config.js'
 
 /**
  * Health check endpoint
- * @param {Express.Request} req 
- * @param {Express.Response} res 
+ * @param {import('express').Request} req 
+ * @param {import('express').Response} res 
  */
 const getRoot = (req, res) => {
-    if (config.nodeEnv !== 'production') {
-        res.status(200).json({
-            'environment': config.nodeEnv,
-            'version': config.version
-        })
-    }
-    else {
-        res.status(200).json({})
-    }
+    res.status(200).json({
+        name: config.name,
+        description: config.description
+    });
 }
 
 export default getRoot

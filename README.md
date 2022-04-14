@@ -5,6 +5,8 @@
 A minimal but useful node & express starter template with some default
 middleware and testing.
 
+Requires node 16+
+
 ## Setup & use:
 
 Rename .env.sample to .env & Set your configuration and secrets there and

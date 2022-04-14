@@ -1,7 +1,7 @@
 /**
  * Echo endpoint
- * @param {Express.Request} req 
- * @param {Express.Response} res 
+ * @param {import('express').Request} req 
+ * @param {import('express').Response} res 
  */
 const postRoot = (req, res) => {
     const json = req.body

@@ -1,6 +1,6 @@
 import dotenv from 'dotenv'
 dotenv.config();
-import packageJson from 'package.json';
+import packageJson from '../package.json';
 
 /**
  * Pattern for config is:
@@ -8,6 +8,9 @@ import packageJson from 'package.json';
  */
 const config = {
     version: packageJson.version,
+    name: packageJson.name,
+    description: packageJson.description,
+
     port: process.env['PORT'] ?? 3000,
     nodeEnv: process.env['NODE_ENV'] ?? 'production'
 }
