@@ -1,8 +1,3 @@
-# To keep this repository agnostic, locks are ignored
-# But you may want to ignore these lines
-yarn.lock
-package-lock.json
-
 # .vscode
 .vscode
 
