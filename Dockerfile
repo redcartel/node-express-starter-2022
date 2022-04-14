@@ -1,4 +1,4 @@
-FROM node:14-alpine as js-environment
+FROM node:16-alpine as js-environment
 WORKDIR /usr/app
 COPY package*.json ./
 COPY jsconfig*.json ./
