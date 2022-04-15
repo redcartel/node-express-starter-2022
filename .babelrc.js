@@ -9,7 +9,8 @@ module.exports = {
             {
                 root: [path.resolve(jsConfig.compilerOptions.baseUrl)]
             }
-        ]
+        ],
+        '@babel/transform-runtime'
     ],
     env: {
         test: {

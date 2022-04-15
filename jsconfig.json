@@ -1,9 +1,15 @@
 {
     "compilerOptions": {
-        "module": "CommonJS",
-        "target": "es2016",
+        "module": "es6",
+        "moduleResolution": "node",
         "baseUrl": ".",
+        "target": "es6",
         "resolveJsonModule": true
+    },
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
     },
     "exclude": ["node_modules", "**/node_modules/*", "dist"]
 }
