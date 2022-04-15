@@ -8,7 +8,8 @@ import config from 'src/config.js'
 const getRoot = (req, res) => {
     res.status(200).json({
         name: config.name,
-        description: config.description
+        description: config.description,
+        version: config.version
     });
 }
 
