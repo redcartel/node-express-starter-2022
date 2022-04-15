@@ -4,7 +4,9 @@
         "moduleResolution": "node",
         "baseUrl": ".",
         "target": "es6",
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "esModuleInterop":true,
+        "allowSyntheticDefaultImports": true
     },
     "typeAcquisition": {
         "include": [
