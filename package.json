@@ -1,6 +1,6 @@
 {
   "name": "node-express-starter-2022",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "A minimally opinionated node & express starter for 2022",
   "main": "dist/index.js",
   "author": "Carter Adams",
