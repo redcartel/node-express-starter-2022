@@ -1,4 +1,4 @@
-import config from 'src/config';
+import config from '../config';
 
 /**
  * 500 response & log when errors are raised.

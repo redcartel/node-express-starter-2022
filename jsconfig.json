@@ -2,7 +2,6 @@
     "compilerOptions": {
         "module": "es6",
         "moduleResolution": "node",
-        "baseUrl": ".",
         "target": "es6",
         "resolveJsonModule": true,
         "esModuleInterop":true,

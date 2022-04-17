@@ -26,12 +26,6 @@ A `POST` request to `/` will echo any json sent in the request body.
 
 For code completion to automatically create absolute path imports, you may need to create a `./.vscode/settings.json` file with
 
-```
-{
-    "javascript.preferences.importModuleSpecifier": "non-relative"
-}
-```
-
 ## Help out
 
 Feedback and contributions are very welcome.

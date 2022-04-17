@@ -1,4 +1,4 @@
-import app from 'src/app';
+import app from '../app';
 import supertest from 'supertest';
 
 test('get root returns 200 and data', async () => {
