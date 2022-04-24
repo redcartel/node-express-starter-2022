@@ -10,9 +10,10 @@ import config from '../config';
  */
 const errorHandler = (err, req, res) => {
     console.error(err);
-    return res.status(500).json({ message: config.nodeEnv === 'production' ?
-        'unknown error' :
-        `${err}`
+    return res.status(500).json({ 
+        message: config.nodeEnv === 'production' ?
+            'unknown error' :
+            `${err}`
     });
 }
 
