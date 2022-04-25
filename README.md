@@ -2,9 +2,6 @@
 
 *"A minimally opinionated node & express starter for 2022"*
 
-A minimal but useful node & express starter template with some default
-middleware and testing.
-
 `npm run dev` - Run the development server.
 
 `npm test` - Run tests.
