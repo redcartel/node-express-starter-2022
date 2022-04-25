@@ -8,7 +8,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --verbose",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
-    "dev": "nodemon --delay 500ms -r dotenv/config -w .env -w src src/index.js --exec ./node_modules/.bin/babel-node",
+    "dev": "babel-watch -w .env -w src -c .babelrc.js src/index.js",
     "build": "babel src -d dist --copy-files",
     "start": "node dist/index.js"
   },
@@ -23,6 +23,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
+    "babel-watch": "^7.7.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
@@ -33,7 +34,6 @@
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "jest": "^27.5.1",
-    "nodemon": "^2.0.15",
     "regenerator-runtime": "^0.13.9",
     "supertest": "^6.2.2"
   }
