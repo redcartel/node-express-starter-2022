@@ -2,7 +2,6 @@ import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import config from './config';
 import errorHandler from './middlewares/errorHandler';
 import fourOhFour from './middlewares/fourOhFour';
 import root from './routes/root';
