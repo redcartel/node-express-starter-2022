@@ -8,7 +8,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --verbose",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
-    "dev": "nodemon --delay 500ms -r dotenv/config -w .env -w src src/index.js --exec babel-node",
+    "dev": "nodemon --delay 500ms -r dotenv/config -w .env -w src src/index.js --exec ./node_modules/.bin/babel-node",
     "build": "babel src -d dist --copy-files",
     "start": "node dist/index.js"
   },
