@@ -11,8 +11,13 @@ const config = {
     name: packageJson.name,
     description: packageJson.description,
 
+
+    nodeEnv: process.env['NODE_ENV'] ?? 'development',
     port: process.env['PORT'] ?? 3000,
-    nodeEnv: process.env['NODE_ENV'] ?? 'development'
+    clientUrls: {
+        'development': process.env['DEV_URL'] ?? 'http://localhost:3001',
+        'production': process.env['PROD_URL'] ?? null
+    }
 }
 
 export default config
