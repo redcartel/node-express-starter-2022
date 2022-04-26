@@ -23,7 +23,6 @@
     "@babel/plugin-transform-modules-commonjs": "^7.17.9",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
-    "babel-watch": "^7.7.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
@@ -33,6 +32,7 @@
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
+    "babel-watch": "^7.7.0",
     "jest": "^27.5.1",
     "regenerator-runtime": "^0.13.9",
     "supertest": "^6.2.2"
