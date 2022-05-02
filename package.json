@@ -2,7 +2,7 @@
   "name": "node-express-starter-2022",
   "version": "0.3.2",
   "description": "A node and express starter template for 2022",
-  "author": "Carter Adams",
+  "author": "Carter Adams <carteradams@protonmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
