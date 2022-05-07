@@ -1,6 +1,6 @@
 {
   "name": "node-express-starter-2022",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A node and express starter template for 2022",
   "author": "Carter Adams <carteradams@protonmail.com>",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "scripts": {
     "build": "babel src -d dist --copy-files",
     "start": "node dist/index.js",
-    "dev": "babel-watch -w .env -w src -c .babelrc.js src/index.js",
+    "dev": "babel-watch -w .env -w src src/index.js",
     "test": "cross-env NODE_ENV=test jest --verbose",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "lint": "eslint src"
@@ -25,11 +25,9 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
+    "@babel/cli": "^7.17.10",
     "@babel/core": "^7.17.9",
     "@babel/node": "^7.16.8",
-    "@babel/plugin-transform-modules-commonjs": "^7.17.9",
-    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@types/jest": "^27.4.1",
     "babel-watch": "^7.7.0",
