@@ -1,28 +1,53 @@
+import compression from 'compression';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
+import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import config from './config';
-import errorHandler from './middleware/errorHandler';
-import fourOhFour from './middleware/fourOhFour';
-import root from './routes/root';
+import logger from './logger';
+import primaryRouter from './routes/primaryRouter';
 
 const app = express()
 
-// Apply most middleware first
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+// Remove this if your reverse proxy is doing gzip for you:
+app.use(compression())
+// Make cookies available in the request object
+app.use(cookieParser())
+// Restrict XMLHttpRequest calls to a specific origin:
 app.use(cors({
-    origin: config.clientOrigins[config.nodeEnv]
+    origin: config.nodeEnv === 'production' ? config.origin : '*'
 }))
+// Make json request bodies available in the request object
+app.use(express.json())
+// Make form data urlencoded request bodies available in the request object
+app.use(express.urlencoded({ extended: true }))
+// Limit the number of requests coming from a given IP per 10 minutes
+app.use(rateLimit({
+    windowMs: 10 * 60 * 1000,
+    max: config.requestMax,
+    standardHeaders: true,
+    legacyHeaders: false
+}))
+// Set a bunch of security response headers and turn off some dumb default behavior:
 app.use(helmet())
-app.use(morgan('tiny'))
-
+// Request logging:
+app.use(morgan('short', {
+    stream: {
+        write: (message) => logger.http(message.replace('\n', ''))
+    }
+}))
 // Apply routes before error handling
-app.use('/', root)
-
+app.use('/', primaryRouter)
 // Apply error handling last
-app.use(fourOhFour)
-app.use(errorHandler)
+app.use((_req, res) => {
+    return res.status(404).json({ message: 'not found'})
+})
+// eslint-disable-next-line no-unused-vars
+app.use((err, _req, res, _next) => {
+    logger.error(err);
+    return res.status(500).json({ message: config.nodeEnv === 'production' ? 'error' : `${err}`});
+})
 
 export default app

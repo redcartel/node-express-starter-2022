@@ -1,6 +1,9 @@
 # build directory
 dist
 
+# log directory
+logs
+
 # dotenv environment variable files
 .env
 .env.development

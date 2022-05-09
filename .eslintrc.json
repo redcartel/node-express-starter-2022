@@ -4,6 +4,9 @@
         "experimentalObjectRestSpread": true,
         "sourceType": "module"
     },
+    "rules": {
+        "no-console": "warn"
+    },
     "extends": [
         "eslint:recommended"
     ],
