@@ -2,6 +2,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 import rateLimit from 'express-rate-limit';
+import res from 'express/lib/response';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import config from './config';
@@ -45,24 +46,16 @@ app.use(morgan('short', {
 // Apply all routes to primaryRouter in routes/primaryRouter.js
 app.use('/', primaryRouter)
 
-// A route to test error handling
-if (config.nodeEnv !== 'production') {
-    app.use('/error', () => {
-        logger.info('throwing test error...')
-        throw new Error('test error');
-    });
-}
-
 // Apply error handling last
 app.use((_req, res) => {
-    return res.status(404).json({ message: 'not found'})
+    return res.status(404).json({ message: 'not found' })
 })
 
 // Respond with 500 and log uncaught errors
 // eslint-disable-next-line no-unused-vars
 app.use((err, _req, res, _next) => {
     logger.error(err);
-    return res.status(500).json({ message: config.nodeEnv === 'production' ? 'error' : `${err}`});
+    return res.status(500).json({ message: config.nodeEnv === 'production' ? 'error' : `${err}` });
 })
 
 export default app

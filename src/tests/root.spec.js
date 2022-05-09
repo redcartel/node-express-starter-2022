@@ -17,10 +17,4 @@ describe('root endpoint get and post', () => {
         expect(result.body).toBeTruthy()
         expect(result.body.test).toBe('value')
     })
-
-    test('404 & json returned from nonexistent route', async () => {
-        const result = await supertest(app).get('/badPath')
-        expect(result.statusCode).toEqual(404)
-        expect(result.body.message).toBeTruthy()
-    })
 })
