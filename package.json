@@ -6,25 +6,25 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
+    "clean": "rm -r dist/* logs/*",
     "build": "babel src -d dist --copy-files",
-    "start": "node dist/index.js",
     "dev": "babel-watch -w .env -w src src/index.js",
+    "lint": "eslint src",
+    "start": "node dist/index.js",
     "test": "cross-env NODE_ENV=test jest --verbose",
-    "test:watch": "cross-env NODE_ENV=test jest --watch",
-    "lint": "eslint src"
+    "test:watch": "cross-env NODE_ENV=test jest --watch"
   },
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=8.0.0"
   },
   "dependencies": {
-    "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "errorhandler": "^1.5.1",
     "express": "^4.17.3",
     "express-rate-limit": "^6.4.0",
+    "get-port": "^5.1.1",
     "helmet": "^5.0.2",
     "morgan": "^1.10.0",
     "winston": "^3.7.2",

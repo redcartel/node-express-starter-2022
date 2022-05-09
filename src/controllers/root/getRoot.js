@@ -5,7 +5,7 @@ import config from '../../config.js';
  * @param {import('express').Request} req 
  * @param {import('express').Response} res 
  */
-const getRoot = (req, res) => {
+const getRoot = (_req, res) => {
     res.status(200).json({
         name: config.name,
         description: config.description,
