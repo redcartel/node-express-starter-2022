@@ -5,7 +5,16 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-console": "warn"
+        "no-console": "warn",
+        "require-jsdoc": ["warn", {
+            "require": {
+                "FunctionDeclaration": true,
+                "MethodDefinition": true,
+                "ClassDeclaration": true,
+                "ArrowFunctionExpression": true,
+                "FunctionExpression": true
+            }
+        }]
     },
     "extends": [
         "eslint:recommended"

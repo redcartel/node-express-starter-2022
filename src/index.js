@@ -3,6 +3,10 @@ import config from './config'
 import getPort, { makeRange } from 'get-port'
 import logger from './utils/logger'
 
+/**
+ * Find an open port if the specified one is in use & not in production
+ * @returns {number}
+ */
 const findPort = async () => {
     if (config.nodeEnv === 'production') {
         return parseInt(config.port);
@@ -12,6 +16,9 @@ const findPort = async () => {
     }
 }
 
+/**
+ * Launch the http server
+ */
 const launch = () => {
     findPort().then(port => {
         app.listen(port, () => {

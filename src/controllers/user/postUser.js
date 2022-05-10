@@ -21,7 +21,6 @@ const postUser = (req, res) => {
     if (!config.adminUsername || email !== config.adminUsername || !config.adminPassword || password !== config.adminPassword) {
         res.clearCookie('authCookie', {
             secure: config.nodeEnv === 'production',
-            domain: config.origin,
             httpOnly: true
         })
         return res.status(200).json({ token: null, message: 'bad username or password' });
@@ -30,7 +29,6 @@ const postUser = (req, res) => {
         res.cookie('authCookie', config.authCookie, {
             secure: config.nodeEnv === 'production',
             httpOnly: true,
-            domain: config.origin,
             expires: moment().add(30, 'd').toDate()
         })
         return res.status(200).json({ token: config.sessionToken, message: `logged in as ${config.adminUsername}` });

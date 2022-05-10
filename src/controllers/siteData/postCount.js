@@ -1,7 +1,7 @@
 import { getSiteVisitCount, incrementSiteVisitCount } from '../../services/siteDataService';
 
 /**
- * Echo endpoint
+ * Increment the visit counter
  * @param {import('express').Request} req 
  * @param {import('express').Response} res 
  */

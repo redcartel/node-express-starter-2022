@@ -2,7 +2,7 @@ import { matchedData } from 'express-validator';
 import { getSiteData, setSiteData } from '../../services/siteDataService';
 
 /**
- * Echo endpoint
+ * Update the title or description
  * @param {import('express').Request} req 
  * @param {import('express').Response} res 
  */

@@ -34,6 +34,12 @@ export const cookieIsSet = (result, name, value) => {
     return false
 }
 
+/**
+ * Confirm that a cookie is not being set
+ * @param result 
+ * @param {string} name 
+ * @returns 
+ */
 export const cookieIsNotSet = (result, name) => {
     for (let cookieString of result.headers['set-cookie'] ?? []) {
         if (cookieString.indexOf(`${name}=`) > -1) {
@@ -43,6 +49,12 @@ export const cookieIsNotSet = (result, name) => {
     return true;
 }
 
+/**
+ * Confirm that a cookie's domain property is the given url
+ * @param result 
+ * @param {string} url 
+ * @returns 
+ */
 export const cookieDomainIsSet = (result, url) => {
     for (let cookieString of result.headers['set-cookie'] ?? []) {
         if (cookieString.indexOf(`Domain=${url};`)) {
@@ -52,6 +64,12 @@ export const cookieDomainIsSet = (result, url) => {
     return false;
 }
 
+/**
+ * Retrieve the value of a cookie
+ * @param result 
+ * @param name 
+ * @returns 
+ */
 export const getCookieValue = (result, name) => {
     for (let cookieString of result.headers['set-cookie'] ?? []) {
         if (cookieString.indexOf(`${name}=`) > -1) {
@@ -65,6 +83,12 @@ export const getCookieValue = (result, name) => {
     return undefined;
 }
 
+/**
+ * Get the csrf cookie and token
+ * @param app 
+ * @param {string} path 
+ * @returns 
+ */
 export const getCSRF = async (app, path="/csrf") => {
     const result = await supertest(app).get(path)
     let cookie =  getCookieValue(result, '_csrf')
@@ -72,6 +96,14 @@ export const getCSRF = async (app, path="/csrf") => {
     return { cookie, token }
 }
 
+/**
+ * Make a POST request with CSRF cookie & token and optionally Auth cookie & header
+ * @param app 
+ * @param {string} path 
+ * @param {any} values 
+ * @param {boolean} auth 
+ * @returns 
+ */
 export const postWithCSRF = async (app, path, values, auth=false) => {
     const { cookie, token } = await getCSRF(app)
     const _bearer = auth ? `Bearer ${config.sessionToken}` : 'Bearer'
@@ -82,7 +114,13 @@ export const postWithCSRF = async (app, path, values, auth=false) => {
     return call
 }
 
-export const authWrap = (call, cookies='') => {
-    call.set('Cookie', `authCookie=${config.authCookie};`+cookies).set('Authorization').set('Authorization', `Bearer ${config.sessionToken}`);
+/**
+ * Wrap a call to super(app).METHOD in with the authorization cookie & header
+ * @param call 
+ * @param {string} additionalCookies 
+ * @returns 
+ */
+export const authWrap = (call, additionalCookies='') => {
+    call.set('Cookie', `authCookie=${config.authCookie};`+additionalCookies).set('Authorization').set('Authorization', `Bearer ${config.sessionToken}`);
     return call
 }

@@ -13,7 +13,6 @@ const config = {
 
     nodeEnv: process.env['NODE_ENV'] ?? 'development',
     port: process.env['PORT'] ?? 3000,
-    origin: process.env['ORIGIN'] ?? 'none',
     adminUsername: process.env['ADMIN_USERNAME'] ?? undefined,
     adminPassword: process.env['ADMIN_PASSWORD'] ?? undefined,
     sessionToken: process.env['SESSION_TOKEN'] ?? undefined,

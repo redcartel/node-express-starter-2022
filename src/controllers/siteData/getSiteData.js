@@ -1,7 +1,7 @@
 import { getSiteData } from '../../services/siteDataService';
 
 /**
- * Health check endpoint
+ * Retrieve the site title and description
  * @param {import('express').Request} req 
  * @param {import('express').Response} res 
  */
