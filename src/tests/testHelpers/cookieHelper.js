@@ -1,6 +1,5 @@
 import supertest from "supertest";
 import config from '../../config';
-import logger from "../../utils/logger";
 
 /**
  * check if a cookie is being set

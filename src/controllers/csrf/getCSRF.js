@@ -6,10 +6,6 @@ import config from '../../config'
  * @param {import('express').Response} res 
  */
 const getCSRF = (req, res) => {
-    /* istanbul ignore next */
-    if (!req.csrfToken) {
-        return res.json({ csrf: false});
-    }
     res.cookie('XSRF-TOKEN', req.csrfToken(), {
         domain: config.origin
     })

@@ -1,5 +1,4 @@
 import config from '../../config';
-import moment from 'moment';
 
 /**
  * Log in endpoint

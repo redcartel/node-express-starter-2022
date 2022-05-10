@@ -1,3 +1,4 @@
+// TODO: Update for actual database
 const _siteData = {
     title: 'Example site',
     description: 'An example of a React frontend / express backend application'

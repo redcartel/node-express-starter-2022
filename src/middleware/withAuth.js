@@ -1,3 +1,6 @@
+
+import config from '../config';
+
 /**
  * @callback asyncHandler
  * @param {import('express').Request} req
@@ -6,8 +9,7 @@
  * @returns {Promise}
  */
 
-import config from '../config';
-
+// TODO: Update for real auth
 /**
  * Example authentication middleware
  * @param {boolean} required 
