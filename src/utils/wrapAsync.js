@@ -1,5 +1,5 @@
 import config from '../config';
-import logger from '../logger';
+import logger from './logger';
 /**
  * @callback asyncHandler
  * @param {import('express').Request} req
@@ -17,6 +17,7 @@ const wrapAsync = (controller) => {
         controller(req, res, next).catch(e => {
             logger.error(`promise rejection`);
             logger.error(e);
+            /* istanbul ignore next */
             res.status(500).json({message: config.nodeEnv === 'production' ? 'error' : `promise rejection ${e}`});
         })
     }

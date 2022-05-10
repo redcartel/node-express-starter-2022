@@ -2,5 +2,10 @@
   "modulePathIgnorePatterns": ["/dist/"],
   "transform": {
     "^.+\\.js$": "babel-jest"
-  }
+  },
+  "collectCoverageFrom": [
+    "src/**/*.js",
+    "!src/tests/**/*.*",
+    "!src/*.js"
+  ]
 }

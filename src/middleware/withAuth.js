@@ -7,7 +7,6 @@
  */
 
 import config from '../config';
-import logger from '../logger';
 
 /**
  * Example authentication middleware

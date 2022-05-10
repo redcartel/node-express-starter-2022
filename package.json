@@ -7,6 +7,7 @@
   "main": "dist/index.js",
   "scripts": {
     "clean": "rm -r dist/* logs/*",
+    "coverage": "cross-env NODE_ENV=test jest --coverage",
     "build": "babel src -d dist --copy-files",
     "dev": "babel-watch -w .env -w src src/index.js",
     "lint": "eslint src",
@@ -21,6 +22,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "csurf": "^1.11.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-rate-limit": "^6.4.0",

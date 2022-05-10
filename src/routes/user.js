@@ -5,10 +5,10 @@ import getUser from "../controllers/user/getUser";
 import postUser from "../controllers/user/postUser";
 import withAuth from "../middleware/withAuth";
 
-const user = new express.Router();
+const user = express.Router();
 
 user.post('/',
-    body('email').isEmail(),
+    body('email').isEmail().normalizeEmail(),
     body('password').isLength({ min: 5 }),
     postUser)
 

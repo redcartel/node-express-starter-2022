@@ -14,12 +14,29 @@ const config = {
     nodeEnv: process.env['NODE_ENV'] ?? 'development',
     port: process.env['PORT'] ?? 3000,
     origin: process.env['ORIGIN'] ?? 'none',
-    requestMax: process.env['REQUEST_MAX'] ?? 1000,
     adminUsername: process.env['ADMIN_USERNAME'] ?? undefined,
     adminPassword: process.env['ADMIN_PASSWORD'] ?? undefined,
     sessionToken: process.env['SESSION_TOKEN'] ?? undefined,
     oldSessionToken: process.env['OLD_TOKEN'] ?? undefined,
-    authCookie: process.env['AUTH_COOKIE'] ?? undefined
+    authCookie: process.env['AUTH_COOKIE'] ?? undefined,
+
+    csurfMiddleware: {
+        cookie: {
+            domain: process.env['NODE_ENV'] === 'production' ? (process.env['ORIGIN'] ?? 'none') : '*',
+            httponly: true
+        }
+    },
+
+    corsMiddleware: {
+        origin: process.env['NODE_ENV'] === 'production' ? (process.env['ORIGIN'] ?? 'none') : '*'
+    },
+
+    rateLimitMiddleware: {
+        windowMs: 10 * 60 * 1000,
+        max: process.env['NODE_ENV'] === 'production' ? (process.env['REQUEST_MAX'] ?? 1000) : 999999999,
+        standardHeaders: true,
+        legacyHeaders: false
+    }
 }
 
 export default config

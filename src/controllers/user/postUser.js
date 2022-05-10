@@ -1,4 +1,4 @@
-import { validationResult } from 'express-validator'
+import { matchedData } from 'express-validator'
 import moment from 'moment';
 import config from '../../config';
 
@@ -8,13 +8,15 @@ import config from '../../config';
  * @param {import('express').Response} res 
  */
 const postUser = (req, res) => {
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ message: 'bad request' });
-    }
-
     // eslint-disable-next-line no-unused-vars
-    const { email, password } = req.body
+    const { email, password } = matchedData(req, {
+        locations: ['body'],
+        onlyValidData: true,
+    })
+
+    if (!email || !password) {
+        return res.status(400).json({message: 'bad request'})
+    }
 
     if (!config.adminUsername || email !== config.adminUsername || !config.adminPassword || password !== config.adminPassword) {
         res.clearCookie('authCookie', {

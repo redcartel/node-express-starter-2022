@@ -1,7 +1,7 @@
 import app from './app'
 import config from './config'
 import getPort, { makeRange } from 'get-port'
-import logger from './logger'
+import logger from './utils/logger'
 
 const findPort = async () => {
     if (config.nodeEnv === 'production') {

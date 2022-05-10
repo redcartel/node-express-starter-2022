@@ -5,7 +5,7 @@
  */
 
 const getUser = (req, res) => {
-    res.json(req.user ?? {});
+    res.json(req.user);
 }
 
 export default getUser;
