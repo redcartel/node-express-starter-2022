@@ -4,6 +4,9 @@ dist
 # log directory
 logs
 
+# coverage
+coverage
+
 # dotenv environment variable files
 .env
 .env.development
