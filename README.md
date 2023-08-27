@@ -2,7 +2,11 @@
 
 _"A minimally opinionated node & express starter for 2022 & 2023"_
 
-This template is also used by my utility create-my-express on npm.
+The easy way to use this template:
+
+`yarn create my-express my-project`
+
+`npx create-my-express my-project`
 
 ## Usage:
 
